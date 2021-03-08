@@ -27,7 +27,7 @@ const Review = () => {
         });
         setCart(cartProducts);
     }, []);
-    
+
 
     const removeProduct = (productKey) => {
         const newCart = cart.filter(pd => pd.key !== productKey)
@@ -40,11 +40,9 @@ const Review = () => {
         thankYou = <img src={happyImage} alt=""></img>
     }
 
-
-
     return (
         <div className="twin-container">
-            {/* <h1>Cart Items: {cart.length}</h1> */}
+            
             <div className="product-container">
                 {
                     cart.map(pd => <ReviewItem removeProduct={removeProduct} product={pd} key={pd.key}></ReviewItem>)
@@ -55,6 +53,7 @@ const Review = () => {
                 }
 
             </div>
+            
             <div className="cart-container">
                 <Cart cart={cart}>
                     <Button variant="contained" color="primary" onClick={handlePlaceOrder}>Place Order</Button>

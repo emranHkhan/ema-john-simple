@@ -8,8 +8,8 @@ import Product from '../Product/Product';
 import './Shop.css';
 
 const Shop = () => {
-    const firstTen = fakeData.slice(0, 10);
-    const [products, setProducts] = useState(firstTen);
+    const firstFive = fakeData.slice(0, 5);
+    const [products, setProducts] = useState(firstFive);
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
@@ -49,7 +49,7 @@ const Shop = () => {
             <div className="product-container">
 
                 {
-                    products.map(pd => <Product key={Math.floor(Math.random() * 20000)} product={pd} handleAddProduct={handleAddProduct} showAddToCart={true}></Product>)
+                    products.map(pd => <Product key={pd.key} product={pd} handleAddProduct={handleAddProduct} showAddToCart={true}></Product>)
                 }
 
             </div>

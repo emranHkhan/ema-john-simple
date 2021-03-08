@@ -33,6 +33,10 @@ function App() {
       <Router>
         <Switch>
 
+          <Route exact path="/">
+            <Shop />
+          </Route>
+
           <Route path="/shop">
             <Shop />
           </Route>
@@ -44,19 +48,15 @@ function App() {
           <Route path="/inventory">
             <Inventory />
           </Route>
-          
-          <Route exact path="/">
-            <Shop />
-          </Route>
 
           <Route path="/product/:productKey"> {/* this productKey is basically a dummy text. It could be anything. It comes from the <Link /> component that you have set in the <Product /> component */}
 
             <ProductDetails />
-            
+
           </Route>
 
           <Route path="*">
-                <NotFound />
+            <NotFound />
           </Route>
         </Switch>
       </Router>

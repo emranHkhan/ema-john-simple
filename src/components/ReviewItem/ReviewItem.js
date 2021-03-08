@@ -11,6 +11,7 @@ const ReviewItem = (props) => {
         paddingBottom: '5px',
         marginLeft: '200px'
     }
+    
     return (
         <div style={reviewItemStyle}>
             <h4>{name}</h4>
